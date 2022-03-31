@@ -1,0 +1,654 @@
+{
+	"info": {
+		"_postman_id": "fdc3d085-1a79-4fd1-acd7-18bf8f9789e3",
+		"name": "Event Organizer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "userRegister",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"String\",\r\n    \"email\": \"salizahid75ss6@gmail.com\",\r\n    \"contact\": \"String\",\r\n    \"password\": \"String\",\r\n    \"role\":\"super-admin\",\r\n    \"status\":\"active\",\r\n    \"address\": {\r\n        \"lineOne\": \"String\",\r\n        \"lineTwo\": \"String\"\r\n    },\r\n    \"lastLocation\": \"String\",\r\n    \"profilePicture\": \"String\",\r\n    \"paymentMethod\" : {\r\n        \"accountTitle\": \"String\",\r\n        \"accountNumber\": \"String\",\r\n        \"bankName\": \"String\",\r\n        \"cardNo\": \"String\",\r\n        \"cardExpiry\": \"String\",\r\n        \"cardCvv\": \"String\"\r\n    },\r\n    \"isActive\":false,\r\n    \"isDeleted\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/userRegister",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"userRegister"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"salizahid75ss6@gmail.com\",\r\n    \"password\":\"String\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/loginUser",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"loginUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"6228403c0358e477ad528222\",\r\n    \"name\": \"Syed Ali 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/updateProfile",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"updateProfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "venues",
+			"item": [
+				{
+					"name": "addNewVenue",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"provider\":\"6228403c0358e477ad528222\",\r\n    \"title\": \"Kremlin Banquetss\",\r\n    \"address\": \"Sowa Gajjumatta Kahna Nau, Lahore.\",\r\n    \"location\": \"https://map.google.com/\",\r\n    \"images\": [\"1.jpg\", \"2.jpg\", \"3.jpg\", \"4.jpg\"],\r\n    \"availableSlots\": [\r\n        {\r\n            \"timing\":{\r\n                \"from\":\"02:30 PM\",\r\n                \"to\":\"04:30 PM\"\r\n            },\r\n            \"charges\": 40000\r\n        },\r\n        {\r\n            \"timing\":{\r\n                \"from\":\"05:30 PM\",\r\n                \"to\":\"08:30 PM\"\r\n            },\r\n            \"charges\": 50000\r\n        },\r\n        {\r\n            \"timing\":{\r\n                \"from\":\"09:30 PM\",\r\n                \"to\":\"11:30 PM\"\r\n            },\r\n            \"charges\": 60000\r\n        }\r\n    ],\r\n    \"services\": [\r\n        {\r\n            \"title\":\"security\",\r\n            \"charges\":10,\r\n            \"frequency\":\"Per Person\"\r\n        },\r\n        {\r\n            \"title\":\"food\",\r\n            \"charges\":1000,\r\n            \"frequency\":\"Per Person\"\r\n        }\r\n    ],\r\n    \"type\":\"banquet\",\r\n    \"totalArea\": \"275sqft\",\r\n    \"isActive\":0,\r\n    \"isDeleted\":0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/venue/addNewVenue",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"venue",
+								"addNewVenue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modifyVenue",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"venueId\":\"6228571eaf82cd859b3b9b74\",\r\n    \"title\": \"White House 2\",\r\n    \"address\": \"Sowa Gajjumatta Kahna Nau, Lahore.\",\r\n    \"location\": \"https://map.google.com/\",\r\n    \"images\": [\"1.jpg\", \"2.jpg\", \"3.jpg\", \"4.jpg\"],\r\n    \"availableSlots\": [\r\n        {\r\n            \"timing\":{\r\n                \"from\":\"02:30 PM\",\r\n                \"to\":\"04:30 PM\"\r\n            },\r\n            \"charges\": 40000\r\n        },\r\n        {\r\n            \"timing\":{\r\n                \"from\":\"05:30 PM\",\r\n                \"to\":\"08:30 PM\"\r\n            },\r\n            \"charges\": 50000\r\n        },\r\n        {\r\n            \"timing\":{\r\n                \"from\":\"09:30 PM\",\r\n                \"to\":\"11:30 PM\"\r\n            },\r\n            \"charges\": 60000\r\n        }\r\n    ],\r\n    \"services\": [\r\n        {\r\n            \"title\":\"security\",\r\n            \"charges\":10,\r\n            \"frequency\":\"Per Person\"\r\n        },\r\n        {\r\n            \"title\":\"food\",\r\n            \"charges\":1000,\r\n            \"frequency\":\"Per Person\"\r\n        }\r\n    ],\r\n    \"type\":\"banquet\",\r\n    \"totalArea\": \"275sqft\",\r\n    \"isActive\":0,\r\n    \"isDeleted\":0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/venue/updateVenue",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"venue",
+								"updateVenue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "providerVenues",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"provider\":\"6228403c0358e477ad528222\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/venue/providerVenues",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"venue",
+								"providerVenues"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getVenueById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"6228571eaf82cd859b3b9b74\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/venue/getVenueById",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"venue",
+								"getVenueById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteVenue",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"venueId\":\"6228571eaf82cd859b3b9b74\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/venue/deleteVenue",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"venue",
+								"deleteVenue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allVenues",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/venue/allVenues",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"venue",
+								"allVenues"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "bookings",
+			"item": [
+				{
+					"name": "addNewBooking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\": \"6228403c0358e477ad528222\",\r\n    \"venue\": \"6228571eaf82cd859b3b9b74\",\r\n    \"bookedSlot\": {\r\n        \"from\": \"05:30 PM\",\r\n        \"to\": \"08:30PM\"\r\n    },\r\n    \"persons\": \"400-500\",\r\n    \"servicesIncluded\": [\r\n        {\r\n            \"title\": \"security\"\r\n        },\r\n        {\r\n            \"title\": \"food\"\r\n        },\r\n        {\r\n            \"title\": \"catering\"\r\n        }\r\n    ],\r\n    \"totalCharges\": 50000,\r\n    \"status\": \"Requested\",\r\n    \"isActive\":false,\r\n    \"isDeleted\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/booking/createBooking",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"booking",
+								"createBooking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modifyBooking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookingId\": \"62287944ab0b435047b570eb\",\r\n    \"bookedSlot\": {\r\n        \"from\": \"05:30 PM\",\r\n        \"to\": \"08:30PM\"\r\n    },\r\n    \"persons\": \"300-400\",\r\n    \"servicesIncluded\": [\r\n        {\r\n            \"title\": \"security\"\r\n        },\r\n        {\r\n            \"title\": \"food\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/booking/updateBooking",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"booking",
+								"updateBooking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userBookings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\":\"6228403c0358e477ad528222\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/booking/userBookings",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"booking",
+								"userBookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBookingById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"62287944ab0b435047b570eb\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/booking/getBookingById",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"booking",
+								"getBookingById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBooking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookingId\":\"62287944ab0b435047b570eb\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/booking/deleteBooking",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"booking",
+								"deleteBooking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allBookings",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/booking/allBookings",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"booking",
+								"allBookings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reviews",
+			"item": [
+				{
+					"name": "addNewReview",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\":\"6228403c0358e477ad528222\",\r\n    \"venue\": \"622857a27f6218ee3270d86d\",\r\n    \"rating\":\"3\",\r\n    \"comment\": \"Some Text\",\r\n    \"isActive\":1,\r\n    \"isDeleted\":0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/review/createReview",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"review",
+								"createReview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modifyReview",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reviewId\": \"62288a0299aa3a9732300419\",\r\n    \"comment\":\"Some Text Here\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/review/updateReview",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"review",
+								"updateReview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userReviews",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"6228403c0358e477ad528222\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/review/userReviews",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"review",
+								"userReviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReviewById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"62288a0299aa3a9732300419\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/review/getReviewById",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"review",
+								"getReviewById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReviewByVenueId",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"venueId\":\"622857a27f6218ee3270d86d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/review/getReviewByVenueId",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"review",
+								"getReviewByVenueId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteReview",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reviewId\":\"62288a0299aa3a9732300419\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/review/deleteReview",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"review",
+								"deleteReview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "allReviews",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/review/allReviews",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"review",
+								"allReviews"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
