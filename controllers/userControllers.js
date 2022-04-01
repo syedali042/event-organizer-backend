@@ -9,7 +9,7 @@ module.exports = {
                 if(createUser) res.status(200).send({msg: 'User Registered', data:createUser});
                 else res.status(203).send({msg: 'Something Went Wrong'});
             }else{
-                res.status(203).send({msg: 'User Already Exist'});
+                res.status(204).send({msg: 'User Already Exist'});
             } 
         } catch (error) {
             res.status(500).send({msg: 'Internal Server Error'});
@@ -17,6 +17,7 @@ module.exports = {
     },
     loginUser: async (req, res) => {
         try {
+            console.log(req.body)
             const findUser = await UserModel.findOne({email:req.body.email, password:req.body.password});
             if(findUser){
                 res.status(200).send({msg: 'User Authenticated Successfull', data:findUser});
@@ -30,6 +31,7 @@ module.exports = {
     updateProfile: async (req, res) => {
         try {
             const data = req.body;
+            console.log(data);
             var items = {}
             const condition = {
                 _id:req.body.userId
@@ -52,6 +54,19 @@ module.exports = {
         } catch (error) {
             return res.status(500).send(error.message);
         }
-    }
+    },
+    getUserById: async (req, res) => {
+        try {
+            const findUser = await UserModel.findById(req.body.id);
+            if(findUser){
+                delete findUser.password;
+                res.status(200).send({msg: 'User Found Successfull', data:findUser});
+            }else{
+                res.status(203).send({msg: 'No User Exist'});
+            } 
+        } catch (error) {
+            res.status(500).send({msg: 'Internal Server Error'});
+        }
+    },
 }
 

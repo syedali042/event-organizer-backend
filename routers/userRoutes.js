@@ -19,7 +19,8 @@ const storage = multer.diskStorage({
 const upload = multer({storage});
 route.post('/userRegister', userController.userRegister);
 route.post('/loginUser', userController.loginUser);
+route.post('/getUserById', userController.getUserById);
 route.post('/updateProfile', userController.updateProfile);
-route.put('/profilePicture', upload.single('files'), userController.profilePicture);
+route.put('/profilePicture', upload.single('filename'), userController.profilePicture);
 
 module.exports = route;
