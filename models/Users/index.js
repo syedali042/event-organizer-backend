@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
     password: String,
     role: String,
     status: String,
+    cc:Number,
     address: {
         lineOne: String,
         lineTwo: String,

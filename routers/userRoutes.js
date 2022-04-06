@@ -21,6 +21,9 @@ route.post('/userRegister', userController.userRegister);
 route.post('/loginUser', userController.loginUser);
 route.post('/getUserById', userController.getUserById);
 route.post('/updateProfile', userController.updateProfile);
-route.put('/profilePicture', upload.single('filename'), userController.profilePicture);
+route.post('/profilePicture', upload.single('filename'), userController.profilePicture);
+route.post('/sendConfirmationCode',userController.sendConfirmationCode);
+route.post('/confirmCode',userController.confirmCode);
+route.post('/updatePassword',userController.updatePassword);
 
 module.exports = route;
